@@ -1,0 +1,145 @@
+
+<ItemLabel@Label>
+    font_size: '25sp'
+    halign: 'center'
+    valign: 'middle'
+
+
+<Container>:
+    BoxLayout:
+        padding: [5, 0, 5, 0]
+        orientation:'vertical'
+
+        BoxLayout:
+            size_hint: 1, 0.1
+
+            Image:
+                source: 'air_bank2.png'
+
+            MDSpinner:
+                size_hint: None, None
+                size: dp(46), dp(46)
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                active: True if check.active else False
+
+            MDCheckbox:
+                id: check
+                size_hint: None, None
+                size: dp(48), dp(48)
+                pos_hint: {'center_x': .5, 'center_y': .4}
+                active: True
+            #md_bg_color: .2, .2, .2, 1
+            #specific_text_color: 1, 1, 1, 1
+
+        MDBottomNavigation:
+            panel_color: .2, .2, .2, 1
+
+            MDBottomNavigationItem:
+                name: 'screen 1'
+                text: 'Můj účet'
+                icon: 'credit-card'
+
+                FloatLayout:
+                    rows: 2
+                    AsyncImage:
+                        source: 'https://bezpecnost.app/cs/ccs.png'
+                        size_hint: 1, 1.5
+
+                    BoxLayout:
+                        orientation: 'vertical'
+                        padding: [5, 0, 5, 0]
+                        size_hint: 1, 0.5
+                        #FitImage:
+                            #size_hint_y: 3
+                            #source: 'qr.png'
+
+
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/cs/info.png'
+                            size_hint: 1, 1
+
+
+            #md_bg_color: .#2, .2, .2, 1
+            #specific_text_color: 1, 1, 1, 1
+
+            MDBottomNavigationItem:
+                name: 'screen 2'
+                text: 'Rezervovat QR'
+                icon: 'qrcode-scan'
+
+                BoxLayout:
+                    padding: [0, 0, 0, 35]
+                    orientation: 'vertical'
+                    Carousel:
+                        direction: 'right'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/1.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/2.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/3.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/4.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/5.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/6.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/7.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/8.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/9.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/10.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/11.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/12.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/13.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/14.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/15.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/16.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/17.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/18.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/19.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/20.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/21.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr22.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/23.jpg'
+                        AsyncImage:
+                            source: 'https://bezpecnost.app/qr/24.jpg'
+                    MDRaisedButton:
+                        text: "Dokončete rezervaci"
+                        md_bg_color: .30, .30, .30, .70
+                        size_hint: 1, .3
+
+
+
+
+
+            MDBottomNavigationItem:
+                name: 'screen 3'
+                text: 'Mapa terminálu'
+                icon: 'google-maps'
+
+                BoxLayout:
+                    size_hint: 1, 1
+                    MapView:
+                        lat: 50.080138
+                        lon: 14.423697
+                        zoom: 18
+                        MapMarkerPopup:
+                            lat: '50.080138'
+                            lon: '14.423697'
